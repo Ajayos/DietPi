@@ -748,7 +748,7 @@ setenv rootuuid "true"' /boot/boot.cmd
 					80) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=orangepi-5 rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
 					82) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=orangepi-5-plus rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
 					85) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=rock-5a rock-5 rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
-					90) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=radxa-zero3' /boot/dietpiEnv.txt;;
+					90) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=radxa-zero3 rockchip' /boot/dietpiEnv.txt;;
 					92) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=nanopi-m6 rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
 					93) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=orangepi-5-pro rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
 					79|91) G_CONFIG_INJECT 'overlay_prefix=' 'overlay_prefix=rockchip-rk3588 rk3588' /boot/dietpiEnv.txt;;
@@ -764,7 +764,7 @@ setenv rootuuid "true"' /boot/boot.cmd
 				case $G_HW_MODEL in
 					73) G_CONFIG_INJECT 'consoleargs=' 'consoleargs=console=ttyS0,1500000' /boot/dietpiEnv.txt;; # headless
 					47|55|56) G_CONFIG_INJECT 'consoleargs=' 'consoleargs=console=ttyS2,1500000' /boot/dietpiEnv.txt;; # headless
-					78|79|80|82|85|90|91|92|93|94) G_EXEC sed --follow-symlinks -i 's/ttyAML0,115200/ttyFIQ0,1500000/' /boot/dietpiEnv.txt;; # Rockchip vendor
+					78|79|80|82|85|91|92|93|94) G_EXEC sed --follow-symlinks -i 's/ttyAML0,115200/ttyFIQ0,1500000/' /boot/dietpiEnv.txt;; # Rockchip vendor
 					*) G_EXEC sed --follow-symlinks -i 's/ttyAML0,115200/ttyS2,1500000/' /boot/dietpiEnv.txt;;
 				esac
 
@@ -1186,7 +1186,7 @@ _EOF_
 				87) model='orangepi3b' kernel='rockchip64';;
 				88) model='orangepizero2w' kernel='sunxi64';;
 				89) model='orangepi3-lts' kernel='sunxi64';;
-				90) model='radxa-zero3' kernel='rk35xx' branch='vendor';;
+				90) model='radxa-zero3' kernel='rockchip64';;
 				91) model='orangepi5-max' kernel='rk35xx' branch='vendor';;
 				92) model='nanopi-m6' kernel='rk35xx' branch='vendor';;
 				93) model='orangepi5pro' kernel='rk35xx' branch='vendor';;
